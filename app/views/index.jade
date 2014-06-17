@@ -9,11 +9,11 @@ block content
 						.navbar-header
 							a.navbar-brand(href="#") NodeGear
 						ul.nav.navbar-nav.navbar-right
-							li: a(href="#") Pricing
-							li: a(href="#") Features
+							li: a(href="/pricing.html") Pricing
+							li: a(href="/features.html") Features
 							li.divider
-							li: a(href="#") Log in
-							li: a(href="#") Sign up
+							li: a(href="https://nodegear.io/") Log in
+							li: a(href="https://nodegear.io/register") Sign up
 		.container-fluid
 			h1.text-center Node.js hosting for web developers.
 			h3.text-center Simple hosting for all your projects.
@@ -23,19 +23,43 @@ block content
 				.form-group
 					input.input-lg.form-control(type="password" placeholder="Password")
 				button.btn.btn-lg.btn-primary Create Account
-	.container-fluid
+	.container
 		.row
-			.col-sm-12
-				h1.text-center
-		.row
-			.col-sm-4
-				h3.text-center Continuous Deployment
-				p.text-center Just push to our git repository, and we'll update your app.
-			.col-sm-4
-				h3.text-center Monitoring
-				p.text-center Watch how your app performs in real time.
-			.col-sm-4
-				h3.text-center Easy to Use
+			section.col-sm-4
 				.thumbnail
 					img(src="")
+				h3.text-center Continuous Deployment
+				p.text-center Just push your project to our git repository, and we'll update your app. 
+					a(href="/pricing.html") Learn More
+			section.col-sm-4
+				.thumbnail
+					img(src="")
+				h3.text-center Monitoring
+				p.text-center See how your app performs in real time.
+			section.col-sm-4
+				.thumbnail
+					img(src="")
+				h3.text-center Easy to Use
 				p.text-center Hosting node.js apps is hard. We do the work so you don't have to.
+		.row
+			.col-sm-12
+				h1.text-center Our Story
+				blockquote We found that hosting node.js application by ourselves is hard. Whenever we had a new project, there was a lot of work to be put into setting up the right environment, creating the database. We created a service that automates all this, while being cheap and reliable. We use NodeGear for all our node.js apps, and so should you.
+		.row(style="margin-top:50px;")
+			.col-sm-12
+				h1.text-center How it works
+					br
+					small There's two ways to deploy an app to nodegear
+		.row(style="margin-top: 20px;")
+			.col-sm-6
+				h3 You Push
+				ol
+					li: code git push git@nodegear.io:alex/coolproject.git
+					li Code is Received and Deployed to one of our servers
+					li Runs on coolproject.alex.ngapp.io
+			.col-sm-6
+				h3 We pull
+				ol
+					li Add your public key to your private git hosting
+					li Create a Process, Press Start
+					li Runs on coolproject.alex.ngapp.io
