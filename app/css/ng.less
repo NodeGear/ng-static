@@ -1,0 +1,79 @@
+@import '../vendor/bootstrap/less/variables.less';
+
+@font-family-sans-serif: proxima-nova, "Helvetica Neue", Helvetica, Arial, sans-serif;
+@font-family-monospace: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+@font-size-base:          15px;
+
+@ng-header-background: darken(#bfe2ca, 20%);
+
+@import '../vendor/bootstrap/less/bootstrap.less';
+
+body > .container-fluid {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+header {
+	background-color: @ng-header-background;
+	width: 100%;
+	min-height: 450px;
+
+	// Counters the body > .container-fluid
+	.row {
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+	nav#indexHeader {
+		margin-top: 30px;
+		padding-left: @grid-gutter-width / 2;
+		padding-right: @grid-gutter-width / 2;
+
+		a {
+			color: darken(#FFF, 2%);
+			font-weight: 200;
+			//text-shadow: 0px 0px 2px darken(rgba(150, 150, 150, 1), 20%);
+		}
+
+		a.navbar-brand {
+			font-size: ceil((@font-size-base * 1.45));
+		}
+
+		li {
+			text-transform: uppercase;
+		}
+		li a:hover {
+			background-color: lighten(@ng-header-background, 5%);
+		}
+	}
+
+	h1 {
+		padding-top: 30px;
+		//text-shadow: 0px 0px 1px lighten(rgba(150, 150, 150, 1), 10%);
+		font-weight: 200;
+		color: darken(#FFF, 2%);
+		font-family: @font-family-monospace;
+	}
+
+	h3 {
+		font-weight: 300;
+		color: darken(#FFF, 2%);
+	}
+
+	form {
+		margin-top: 50px;
+
+		.form-group {
+			margin-right: 5px;
+		}
+	}
+
+	input.form-control, button.btn {
+		border-radius: 2px;
+		outline: none;
+	}
+	input.form-control:focus {
+		box-shadow: none;
+		border-color: lighten(@ng-header-background, 20%);
+	}
+}

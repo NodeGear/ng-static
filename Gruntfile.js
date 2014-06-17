@@ -15,8 +15,8 @@ module.exports = function (grunt) {
 				tasks: ['jade:serve']
 			},
 			styles: {
-				files: ['app/css/{,*/}*.css'],
-				tasks: ['newer:copy:css']
+				files: ['app/css/{,*/}*.less'],
+				tasks: ['newer:less:development']
 			},
 			livereload: {
 				files: [
@@ -24,6 +24,26 @@ module.exports = function (grunt) {
 				],
 				options: {
 					livereload: true
+				}
+			}
+		},
+
+		less: {
+			development: {
+				expand: true,
+				cwd: 'app/css',
+				dest: 'dist/css',
+				src: '**/*',
+				ext: '.css'
+			},
+			production: {
+				expand: true,
+				cwd: 'app/css',
+				dest: 'dist/css',
+				src: '**/*',
+				ext: '.css',
+				options: {
+					cleancss: true
 				}
 			}
 		},
@@ -54,12 +74,6 @@ module.exports = function (grunt) {
 
 		// Copies remaining files to places other tasks can use
 		copy: {
-			css: {
-				expand: true,
-				cwd: 'app/css',
-				dest: 'dist/css/',
-				src: '{,*/}*.css'
-			},
 			js: {
 				expand: true,
 				cwd: 'app/js',
@@ -88,7 +102,6 @@ module.exports = function (grunt) {
 				limit: 6
 			},
 			server: [
-				'copy:css',
 				'copy:js',
 				'copy:vendor',
 				'copy:img',
@@ -105,16 +118,6 @@ module.exports = function (grunt) {
 			}
 		},
 
-		cssmin: {
-			dist: {
-				files: [{
-					expand: true,
-					cwd: 'app/css',
-					src: ['**/*.css', '*.css'],
-					dest: 'dist/css'
-				}]
-			}
-		},
 		uglify: {
 			dist: {
 				files: [{
@@ -145,13 +148,14 @@ module.exports = function (grunt) {
 	grunt.registerTask('serve', [
 		'clean:clean',
 		'concurrent:server',
+		'less:development',
 		'concurrent:watch'
 	]);
 
 	grunt.registerTask('build', [
 		'clean:clean',
 		'concurrent:server',
-		'cssmin',
+		'less:production',
 		'uglify'
 	]);
 

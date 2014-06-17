@@ -2,7 +2,11 @@ doctype
 html
 	head
 		title Hello
-
-		link(rel="stylesheet" href="/vendor/bootstrap/dist/css/bootstrap.min.css")
+		
+		link(rel="stylesheet" href="/css/ng.css")
+		script(src="https://use.typekit.net/ywj1vdk.js")
+		script.
+			try{Typekit.load();}catch(e){}
 	body
-		block content
+		.container-fluid
+			block content

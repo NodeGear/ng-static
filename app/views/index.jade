@@ -1,4 +1,41 @@
 extends layout
 
 block content
-	h1 Hello
+	header
+		.row
+			.col-sm-12(style="padding-left:0; padding-right:0")
+				nav#indexHeader.navbar
+					.container-fluid
+						.navbar-header
+							a.navbar-brand(href="#") NodeGear
+						ul.nav.navbar-nav.navbar-right
+							li: a(href="#") Pricing
+							li: a(href="#") Features
+							li.divider
+							li: a(href="#") Log in
+							li: a(href="#") Sign up
+		.container-fluid
+			h1.text-center Node.js hosting for web developers.
+			h3.text-center Simple hosting for all your projects.
+			form.form-inline.text-center
+				.form-group
+					input.input-lg.form-control(type="email" placeholder="Email Address" autofocus)
+				.form-group
+					input.input-lg.form-control(type="password" placeholder="Password")
+				button.btn.btn-lg.btn-primary Create Account
+	.container-fluid
+		.row
+			.col-sm-12
+				h1.text-center
+		.row
+			.col-sm-4
+				h3.text-center Continuous Deployment
+				p.text-center Just push to our git repository, and we'll update your app.
+			.col-sm-4
+				h3.text-center Monitoring
+				p.text-center Watch how your app performs in real time.
+			.col-sm-4
+				h3.text-center Easy to Use
+				.thumbnail
+					img(src="")
+				p.text-center Hosting node.js apps is hard. We do the work so you don't have to.
