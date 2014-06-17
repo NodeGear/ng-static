@@ -1,0 +1,190 @@
+extends layout
+
+include inc/navbar
+
+block content
+	header.short
+		+navbar(2)
+
+	.container
+		.row
+			.col-sm-6
+				h1 Application Pricing
+				blockquote There is a distinction between Production and Development applications. Production applications run on better servers with more resources. Development applications run on less utilised servers. Outside of Development/Staging, you are advised to run the process in a Production server.
+				table.table
+					thead
+						tr
+							th.col-sm-4 &nbsp;
+							th.col-sm-4 Development
+							th.col-sm-4 Production
+					tbody
+						tr
+							th.text-right Price Per Month:
+							td $2 Per Process
+							td $5 Per Process
+						tr
+							th.text-right Memory:
+							td 256 MB RAM
+							td 512 MB RAM
+						tr
+							th.text-right Bandwidth:
+							td Unlimited
+							td Unlimited
+						tr
+							th.text-right Uplink:
+							td 500 Mbits
+							td 500 Mbits
+						tr
+							th.text-right SLA:
+							td No SLA
+							td 99.9%
+						tr
+							th.text-right SSL:
+							td *.ngapp.io Only
+							td Custom SSL Available
+						tr
+							th.text-right Disk:
+							td Magnetic Disk
+							td SSD
+						tr
+							th.text-right Space:
+							td Unlimited *
+							td Unlimited *
+			.col-sm-6
+				h1 Database Pricing
+
+				blockquote We have partnered up with MongoLab to provide production-level quality MongoDB hosting, tightly integrated to NodeGear.
+
+				h2 MongoDB
+
+				table.table
+					thead
+						tr
+							th &nbsp;
+							th MongoLab
+							th NodeGear MongoDB
+					tbody
+						tr
+							th.text-right Type:
+							td Sandbox
+							td Development
+						tr
+							th.text-right Price Per Month:
+							td Free
+							td $1
+						tr
+							th.text-right RAM:
+							td Variable
+							td 16 GB (Shared)
+						tr
+							th.text-right Storage:
+							td Up to 0.5 GB
+							td Unmetered *
+
+				h2 MySQL
+
+				table.table
+					thead
+						tr
+							th &nbsp;
+							th NodeGear MySQL
+					tbody
+						tr
+							th.text-right Type:
+							td Development
+						tr
+							th.text-right Price Per Month:
+							td $2
+						tr
+							th.text-right Server RAM:
+							td 16 GB (Shared)
+						tr
+							th.text-right Storage:
+							td Unmetered *
+		.row
+			.col-sm-12
+				p.text-muted <strong>*</strong> - While there are no hard limits, we monitor app disk usage and will contact you if you use too much.
+					br
+					| <strong>Unmetered</strong> - While we don't set hard limits to how much you can use, abuse to our service will cause termination of your account.
+					br
+					| <strong>Shared Resources</strong> - At the moment, resources are shared between users. We plan to provide dedicated resources to customers that are interested.
+		.row
+			.col-sm-12
+				h1 Dedicated Resources
+
+				blockquote Below is our range of services for dedicated resources. Please not these are estimates and will require manual setup.
+				table.table
+					thead
+						tr
+							th &nbsp;
+							th Small-8
+							th Small-16
+							th SSD
+							th Big-64
+							th Big-128
+							th Massive-256
+					tbody
+						tr
+							th.text-right Price Per Month:
+							td $30
+							td $50
+							td $70
+							td $130
+							td $250
+							td $500
+						tr
+							th.text-right Memory:
+							td 8 GB
+							td 16 GB
+							td 32 GB
+							td 64 GB
+							td 128 GB
+							td 256 GB
+						tr
+							th.text-right CPU:
+							td Core i3
+							td Core i5
+							td Intel Xeon E3
+							td Intel Xeon E5
+							td Intel Xeon E5
+							td 2 x Intel Xeon E5
+						tr
+							th.text-right CPU Cores:
+							td 2 Cores, 4 Threads
+							td 4 Cores, 4 Threads
+							td 4 Cores, 4 Threads
+							td 4 Cores, 8 Threads
+							td 6 Cores, 12 Threads
+							td 20 Cores, 40 Threads
+						tr
+							th.text-right CPU Frequency:
+							td 3.4 Ghz
+							td 3.1 Ghz
+							td 3.2 Ghz
+							td 3.7 Ghz (3.9 Ghz Burst)
+							td 3.5 Ghz (3.9 Ghz Burst)
+							td 2.5 Ghz (3.3 Ghz Burst)
+						tr
+							th.text-right Uplink:
+							td 100 Mbps
+							td 100 Mbps
+							td 250 Mbps
+							td 500 Mbps (1 Gbps Burst)
+							td 500 Mbps (1 Gbps Burst)
+							td 500 Mbps (1 Gbps Burst)
+						tr
+							th.text-right SLA:
+							td 99.9%
+							td 99.9%
+							td 99.99%
+							td 99.95%
+							td 99.95%
+							td 99.95%
+						tr
+							th.text-right Space:
+							td 1 TB
+							td 1 TB
+							td 120 GB
+							td 2 TB
+							td 2 TB
+							td 2 TB

@@ -13,6 +13,10 @@ body > .container-fluid {
 	padding-right: 0;
 }
 
+body {
+	background-color: darken(#FFF, 2%);
+}
+
 header {
 	background-color: @ng-header-background;
 	width: 100%;
@@ -43,7 +47,15 @@ header {
 			text-transform: uppercase;
 		}
 		li a:hover {
-			background-color: lighten(@ng-header-background, 5%);
+			background-color: darken(@ng-header-background, 5%);
+		}
+
+		li.active a {
+			background-color: darken(@ng-header-background, 10%);
+		}
+
+		li.navbar-spacer {
+			width: 50px;
 		}
 	}
 
@@ -77,6 +89,10 @@ header {
 		box-shadow: none;
 		border-color: lighten(@ng-header-background, 20%);
 	}
+}
+
+header.short {
+	min-height: 110px;
 }
 
 .row > section {
@@ -116,4 +132,17 @@ header {
 	blockquote {
 		font-weight: 200;
 	}
+
+	a.castawaylabs, a.castawaylabs:hover {
+		font-size: @font-size-h1;
+		color: white;
+		text-decoration: none;
+		font-family: @font-family-monospace;
+		font-weight: 200;
+	}
+}
+
+.how-it-works {
+	padding-top: 30px;
+	padding-bottom: 30px;
 }

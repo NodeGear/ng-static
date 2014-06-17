@@ -1,19 +1,10 @@
 extends layout
 
+include inc/navbar
+
 block content
 	header
-		.row
-			.col-sm-12(style="padding-left:0; padding-right:0")
-				nav#indexHeader.navbar
-					.container-fluid
-						.navbar-header
-							a.navbar-brand(href="#") NodeGear
-						ul.nav.navbar-nav.navbar-right
-							li: a(href="/pricing.html") Pricing
-							li: a(href="/features.html") Features
-							li.divider
-							li: a(href="https://nodegear.io/") Log in
-							li: a(href="https://nodegear.io/register") Sign up
+		+navbar(1)
 		.container-fluid
 			h1.text-center Node.js hosting for web developers.
 			h3.text-center Simple hosting for all your projects.
@@ -52,33 +43,43 @@ block content
 					h1.text-center Our Story
 					blockquote We found that hosting node.js applications by ourselves is hard. Whenever we had a new project, there was a lot of work to be put into setting up the right environment, creating the database. We created a service that automates all this, while being cheap and reliable. We use NodeGear for all our node.js apps internally, and so should you.
 
-	.container
-		.row(style="margin-top:50px;")
+	.container.how-it-works
+		.row
 			.col-sm-12
 				h1.text-center How it works
 					br
-					small There are three simple ways to deploy an app to nodegear
-		.row(style="margin-top: 20px;")
+					small There are two simple ways to deploy your app to nodegear
+		.row(style="margin-top: 10px;")
 			.col-sm-6
-				h3 You Push
+				h3 Use a Pre-Defined Template
+				ol
+					li Give it a name
+					li Select from Ghost.js, an app Demo or a git repository
+					li Press Create
+			.col-sm-6
+				h3 Push your git repository to NodeGear
 				ol
 					li: code git push git@nodegear.io:alex/coolproject.git
-					li Code is Received and Deployed to one of our servers
-					li Runs on coolproject.alex.ngapp.io
-			.col-sm-6
-				h3 We pull
-				ol
-					li Add your public key to your private git hosting
-					li Create a Process, Press Start
-					li Runs on coolproject.alex.ngapp.io
-	
+					li Your Code is Received and Deployed to our servers
+					li App is started on coolproject.alex.ngapp.io
+		.row(style="margin-top: 15px;")
+			.col-sm-12.text-center
+				a.btn.btn-success.btn-lg(href="https://nodegear.io/register") Get Started!
+
 	.partners
 		.container
 			.row
 				.col-sm-12
 					h1.text-center Our Partners
+			.row(style="margin-top: 15px;")
+				.col-sm-4.text-center
+					a.text-center(href="https://mongohq.com" target="_blank")
+						img(src="/img/mongohq.png")
+				.col-sm-4.text-center
+					a.text-center(href="https://mongolab.com" target="_blank")
+						img(src="/img/mongolab.png")
+				.col-sm-4.text-center
+					a.castawaylabs.text-center(href="http://www.castawaylabs.com" target="_blank") Castaway Labs
 			.row
-				.col-sm-4
-					img(src="/img/mongohq.png")
-				.col-sm-4
-					img(src="/img/mongolab.png")
+				.col-sm-12(style="margin-top: 30px;")
+					p.text-center.text-muted © 2014 NodeGear LTD
