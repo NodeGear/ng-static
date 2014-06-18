@@ -2,6 +2,42 @@ extends layout
 
 include inc/navbar
 
+mixin feature (heading, text)
+		.col-sm-4
+			h4.text-center= heading
+			blockquote= text
+
 block content
 	header.short
 		+navbar(3)
+
+	.container.features
+		.row
+			+feature("Cool Dashboard", "We have a modern dashboard using the latest technologies: Angular.js, Require.js, Node.js and Websockets.")
+			+feature("Resource Monitoring", "See your app CPU and RAM usage in real time.")
+			+feature("Traffic Monitoring", "Watch your application traffic in real time.")
+		.row
+			+feature("Git Push to Deploy", "Integrates with CIs and is super-easy to use. Just push your project to our repository, and we'll update and restart all your app's processes.")
+			+feature("Inexpensive", "It costs $2 per process per month. You can host all your development projects with ease while not impacting your wallet.")
+			+feature("Predefined Templates", "If you're new to node, or just want to get started, use a template such as Ghost.js to start an app quickly and efficiently.")
+		.row
+			+feature("Multiple Datacentres", "We have datacentres in Europe and Canada. You can choose where your app is hosted. Just select the appropriate server.")
+			+feature("Fast", "Deploy and your application in under 30 seconds (depends on the number of dependencies your application requires).")
+			+feature("Scalable", "You can start multiple processes in multiple datacentres. Your DNS can then route your users based on latency or round-robin style. We do the same on our load balancers to make sure all processes get equivalent number of users.")
+		.row
+			+feature("SSL Wildcard", "Free wildcard SSL on ngapp.io subdomains.")
+			+feature("Technical Support", "We're here to help with any technical queries. We also do node.js consultation for companies. Contact us for more.")
+			+feature("Secure", "With Two Factor Authentication and HTTPS-only Dashboard, you need not fear any three-letter agency spying on your activities.")
+		.row
+			.col-sm-12.text-center
+				a.btn.btn-primary(href="https://nodegear.io" target="_blank" style="margin-top: 10px;") Get Started!
+
+	.partners(style="margin-top: 40px;")
+		.container
+			.row
+				h1.text-center Want to Know More?
+				p.text-center.lead.text-muted Write to us: 
+					a(href="mailto:hello@nodegear.com") hello@nodegear.com
+			.row
+				.col-sm-12(style="margin-top: 30px; margin-bottom: 10px;")
+					p.text-center.text-muted © 2014 NodeGear LTD
