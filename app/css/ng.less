@@ -104,7 +104,7 @@ header.short {
 		border-radius: 100px;
 		margin: auto;
 
-		img {
+		img, svg {
 			height: 200-5*2px;
 			width: 200-5*2px;
 			border-radius: inherit;
@@ -113,15 +113,28 @@ header.short {
 	}
 
 	.svg-thumbnail {
-		border-radius: 0;
+		position: relative;
 		svg {
-			height: 200-5*2px;
-			width: 200-5*2px;
-			border-radius: none;
-			border: none;
+			//height: 200-5*2px;
+			//width: 200-5*2px;
+			//border-radius: none;
+			//border: none;
 		}
 		svg rect {
-			fill: steelblue;
+			//fill: steelblue;
+		}
+
+		h1 {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 200px;
+			text-align: center;
+			height: 200px;
+			vertical-align: middle;
+			line-height: 200px;
+			padding: 0;
+			margin: 0;
 		}
 	}
 }
