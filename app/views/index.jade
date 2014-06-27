@@ -2,6 +2,10 @@ extends layout
 
 include inc/navbar
 
+block head
+	title Node.js Hosting Platform
+	meta(name="description" content="Simple Node.js Application Hosting for web developers with NodeGear.")
+
 block js
 	script(src="/vendor/d3/d3.min.js" defer)
 	script(src="/js/rtm.js" defer)
@@ -14,38 +18,46 @@ block content
 			h3.text-center Simple hosting for all your projects.
 			form.form-inline.text-center
 				.form-group
-					input.input-lg.form-control(type="email" placeholder="Email Address" autofocus)
+					input.input-lg.form-control(type="text" placeholder="Your Name" autofocus)
 				.form-group
-					input.input-lg.form-control(type="password" placeholder="Password")
+					input.input-lg.form-control(type="email" placeholder="Email Address")
 				button.btn.btn-lg.btn-primary Create an Account
 	.container
 		.row
 			section.col-sm-4
 				.thumbnail
 					img.img-responsive(src="/img/ghost.png")
-				h3.text-center Ghost.js
-				p.text-center Launch your production-ready Ghost.js blog, using the preset app template.
+				h3.text-center Ghost.js Blog
+				p.text-center Launch your production-ready Ghost.js blog, using our preset app template. Unlimited Traffic, MySQL Database and Hassle-free management.
 					br
-					a(href="https://nodegear.io/register" target="_blank") Get Started.
+					br
+					a.btn.btn-default(href="https://nodegear.io/" target="_blank") Create a blog.
 			section.col-sm-4
 				.thumbnail.svg-thumbnail
 					svg.rtm
+					h1 0%
+					span CPU Usage
 				h3.text-center Real-Time Monitoring
-				p.text-center Gain insight into your application performance, in real time.
+				p.text-center Gain insight into your application's performance, in real time. Log Streaming, Live Process information, etc.
 					br
-					a(href="/features.html") Learn More.
+					br
+					a.btn.btn-default(href="/features.html") Learn More.
 			section.col-sm-4
-				.thumbnail
-					img(src="")
-				h3.text-center Easy to Use
-				p.text-center Hosting node.js apps is hard. We do the work so you don't have to.
+				.thumbnail.svg-thumbnail
+					h1 &lt; 30s
+					span To Create an App
+				h3.text-center Seconds to Start
+				p.text-center Seriously, on average it takes less than 30 seconds to create and boot an app from scratch.
+					br
+					br
+					a.btn.btn-default(href="https://nodegear.io/" target="_blank") Try it for Free!
 
 	.our-story
 		.container
 			.row
 				.col-sm-12
 					h1.text-center Our Story
-					blockquote We found that hosting node.js applications by ourselves is hard. Whenever we had a new project, there was a lot of work to be put into setting up the right environment, creating the database. We created a service that automates all this, while being cheap and reliable. We use NodeGear for all our node.js apps internally, and so should you.
+					blockquote We found that hosting node.js applications manually is hard. Whenever we had a new project, there was a lot of work to be put into setting up the right environment, creating the database, proxies and load balancers.. We created a service that automates all this, while being cheap and reliable. We use NodeGear for all our node.js apps internally, and so should you.
 
 	.container.how-it-works
 		.row
@@ -68,7 +80,7 @@ block content
 					li App is started on coolproject.alex.ngapp.io
 		.row(style="margin-top: 15px;")
 			.col-sm-12.text-center
-				a.btn.btn-success.btn-lg(href="https://nodegear.io/register" target="_blank") Get Started!
+				a.btn.btn-success.btn-lg(href="https://nodegear.io/" target="_blank") Get Started!
 
 	.partners
 		.container
