@@ -103,6 +103,26 @@ header.short {
 		width: 200px;
 		border-radius: 100px;
 		margin: auto;
+
+		img {
+			height: 200-5*2px;
+			width: 200-5*2px;
+			border-radius: inherit;
+			border: none;
+		}
+	}
+
+	.svg-thumbnail {
+		border-radius: 0;
+		svg {
+			height: 200-5*2px;
+			width: 200-5*2px;
+			border-radius: none;
+			border: none;
+		}
+		svg rect {
+			fill: steelblue;
+		}
 	}
 }
 
@@ -149,4 +169,10 @@ header.short {
 
 .features .row .col-sm-4 {
 	padding: 15px;
+}
+
+.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 1.5px;
 }
