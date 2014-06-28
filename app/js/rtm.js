@@ -28,7 +28,6 @@
 		type: 'free',
 		value: 100
 	}];
-	var color = d3.scale.category20();
 
 	var pie = d3.layout.pie()
 		.sort(null)
@@ -52,7 +51,8 @@
 
 	var path = g.selectAll('path')
 		.data(pie(proc))
-	.enter().append('path');
+	.enter()
+		.append('path');
 
 	var colors = ['rgb(174,199,232)', '#1e76a5'];
 
@@ -73,7 +73,7 @@
 		var prob = Math.random();
 		var maxProb = 0;
 		var chance = null;
-		console.log(prob);
+
 		for (var i = 0; i < chances.length; i++) {
 			maxProb += chances[i].probability;
 			if (maxProb > prob) {
@@ -90,7 +90,7 @@
 		path
 			.data(pie(proc))
 			.transition()
-			.duration(500)
+			.duration(200)
 			.attrTween('d', function (a) {
 				var i = d3.interpolate(this._current, a);
 				this._current = i(0);

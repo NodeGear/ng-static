@@ -2,6 +2,10 @@ extends layout
 
 include inc/navbar
 
+block head
+	title NodeGear Pricing - Node.js Application Hosting
+	meta(name="description" content="Simple Node.js Application Hosting for web developers with NodeGear.")
+
 block content
 	header.short
 		+navbar(2)
@@ -207,4 +211,4 @@ block content
 				a.btn.btn-primary.btn-lg(href="mailto:hello@nodegear.com") Contact Us
 		.row
 			.col-sm-12(style="margin-top: 30px; margin-bottom: 10px;")
-				p.text-center.text-muted © 2014 NodeGear LTD
+				p.text-center.text-muted &copy; 2014 NodeGear LTD

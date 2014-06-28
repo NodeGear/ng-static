@@ -3,7 +3,7 @@ extends layout
 include inc/navbar
 
 block head
-	title Node.js Hosting Platform
+	title Node.js Hosting Platform for Bloggers and Developers
 	meta(name="description" content="Simple Node.js Application Hosting for web developers with NodeGear.")
 
 block js
@@ -16,12 +16,12 @@ block content
 		.container-fluid
 			h1.text-center Node.js hosting for web developers.
 			h3.text-center Simple hosting for all your projects.
-			form.form-inline.text-center
+			form.form-inline.text-center(action="https://nodegear.io/register")
 				.form-group
-					input.input-lg.form-control(type="text" placeholder="Your Name" autofocus)
+					input.input-lg.form-control(type="text" placeholder="Your Name" name="name" autofocus)
 				.form-group
-					input.input-lg.form-control(type="email" placeholder="Email Address")
-				button.btn.btn-lg.btn-primary Create an Account
+					input.input-lg.form-control(type="email" placeholder="Email Address" name="email")
+				button.btn.btn-lg.btn-primary(type="submit") Create an Account
 	.container
 		.row
 			section.col-sm-4
@@ -31,7 +31,7 @@ block content
 				p.text-center Launch your production-ready Ghost.js blog, using our preset app template. Unlimited Traffic, MySQL Database and Hassle-free management.
 					br
 					br
-					a.btn.btn-default(href="https://nodegear.io/" target="_blank") Create a blog.
+					a.btn.btn-default(href="https://nodegear.io/" target="_blank") Create a Blog
 			section.col-sm-4
 				.thumbnail.svg-thumbnail
 					svg.rtm
@@ -41,7 +41,7 @@ block content
 				p.text-center Gain insight into your application's performance, in real time. Log Streaming, Live Process information, etc.
 					br
 					br
-					a.btn.btn-default(href="/features.html") Learn More.
+					a.btn.btn-default(href="/features.html") Learn More
 			section.col-sm-4
 				.thumbnail.svg-thumbnail
 					h1 &lt; 30s
@@ -98,4 +98,4 @@ block content
 					a.castawaylabs.text-center(href="http://www.castawaylabs.com" target="_blank") Castaway Labs
 			.row
 				.col-sm-12(style="margin-top: 30px;")
-					p.text-center.text-muted © 2014 NodeGear LTD
+					p.text-center.text-muted &copy; 2014 NodeGear LTD
