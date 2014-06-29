@@ -10,13 +10,54 @@ block js
 	script(src="/vendor/d3/d3.min.js" defer)
 	script(src="/js/rtm.js" defer)
 
+block mixpanel
+	script.
+		var links = [
+				{
+					id: '.ng-create-blog',
+					name: 'Create a Blog',
+					page: 'landing'
+				}, {
+					id: '.ng-learn-more',
+					name: 'Learn More (CPU Usage Graph)',
+					page: 'landing'
+				}, {
+					id: '.ng-create-app',
+					name: 'Try it for free! (Seconds to Start)',
+					page: 'landing'
+				}, {
+					id: '.ng-get-started',
+					name: 'Get Started',
+					page: 'landing'
+				}, {
+					id: '.ng-partner-mongohq',
+					name: 'MongoHQ Partner',
+					type: 'partner',
+					page: 'landing'
+				}, {
+					id: '.ng-partner-mongolab',
+					name: 'MongoLab Partner',
+					type: 'partner',
+					page: 'landing'
+				}, {
+					id: '.ng-partner-castawaylabs',
+					name: 'CastawayLabs Partner',
+					type: 'partner',
+					page: 'landing'
+				}
+			];
+			for (var i = 0; i < links.length; i++) {
+				mixpanel.track_links(links[i].id, 'Clicked Button Link', links[i]);
+			}
+			mixpanel.track_forms('#registerForm', 'Created Account');
+
 block content
 	header
 		+navbar(1)
 		.container-fluid
 			h1.text-center Node.js hosting for web developers.
 			h3.text-center Simple hosting for all your projects.
-			form.form-inline.text-center(action="https://nodegear.io/register")
+			form#registerForm.form-inline.text-center(action="https://nodegear.io/register")
 				.form-group
 					input.input-lg.form-control(type="text" placeholder="Your Name" name="name" autofocus)
 				.form-group
@@ -31,7 +72,7 @@ block content
 				p.text-center Launch your production-ready Ghost.js blog, using our preset app template. Unlimited Traffic, MySQL Database and Hassle-free management.
 					br
 					br
-					a.btn.btn-default(href="https://nodegear.io/" target="_blank") Create a Blog
+					a.ng-create-blog.btn.btn-default(href="https://nodegear.io/" target="_blank") Create a Blog
 			section.col-sm-4
 				.thumbnail.svg-thumbnail
 					svg.rtm
@@ -41,7 +82,7 @@ block content
 				p.text-center Gain insight into your application's performance, in real time. Log Streaming, Live Process information, etc.
 					br
 					br
-					a.btn.btn-default(href="/features.html") Learn More
+					a.ng-learn-more.btn.btn-default(href="/features.html") Learn More
 			section.col-sm-4
 				.thumbnail.svg-thumbnail
 					h1 &lt; 30s
@@ -50,7 +91,7 @@ block content
 				p.text-center Seriously, on average it takes less than 30 seconds to create and boot an app from scratch.
 					br
 					br
-					a.btn.btn-default(href="https://nodegear.io/" target="_blank") Try it for Free!
+					a.ng-create-app.btn.btn-default(href="https://nodegear.io/" target="_blank") Try it for Free!
 
 	.our-story
 		.container
@@ -80,7 +121,7 @@ block content
 					li App is started on coolproject.alex.ngapp.io
 		.row(style="margin-top: 15px;")
 			.col-sm-12.text-center
-				a.btn.btn-success.btn-lg(href="https://nodegear.io/" target="_blank") Get Started!
+				a.ng-get-started.btn.btn-success.btn-lg(href="https://nodegear.io/" target="_blank") Get Started!
 
 	.partners
 		.container
@@ -89,13 +130,13 @@ block content
 					h1.text-center Our Partners
 			.row(style="margin-top: 15px;")
 				.col-sm-4.text-center
-					a.text-center(href="https://mongohq.com" target="_blank")
+					a.ng-partner-mongohq.text-center(href="https://mongohq.com" target="_blank")
 						img(src="/img/mongohq.png")
 				.col-sm-4.text-center
-					a.text-center(href="https://mongolab.com" target="_blank")
+					a.ng-partner-mongolab.text-center(href="https://mongolab.com" target="_blank")
 						img(src="/img/mongolab.png")
 				.col-sm-4.text-center
-					a.castawaylabs.text-center(href="http://www.castawaylabs.com" target="_blank") Castaway Labs
+					a.ng-partner-castawaylabs.castawaylabs.text-center(href="http://www.castawaylabs.com" target="_blank") Castaway Labs
 			.row
 				.col-sm-12(style="margin-top: 30px;")
 					p.text-center.text-muted &copy; 2014 NodeGear LTD

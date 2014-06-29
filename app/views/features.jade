@@ -11,6 +11,22 @@ mixin feature (heading, text)
 			h4.text-center= heading
 			blockquote= text
 
+block mixpanel
+	script.
+		var links = [
+				{
+					id: '.ng-get-started',
+					name: 'Get Started',
+					page: 'features'
+				}, {
+					id: '.ng-mailto',
+					name: 'Mailto Link'
+				}
+			];
+			for (var i = 0; i < links.length; i++) {
+				mixpanel.track_links(links[i].id, 'Clicked Button Link', links[i]);
+			}
+
 block content
 	header.short
 		+navbar(3)
@@ -34,14 +50,14 @@ block content
 			+feature("Secure", "With Two Factor Authentication and HTTPS-only Dashboard, you need not fear any three-letter agency spying on your activities.")
 		.row
 			.col-sm-12.text-center
-				a.btn.btn-primary(href="https://nodegear.io" target="_blank" style="margin-top: 10px;") Get Started!
+				a.ng-get-started.btn.btn-primary(href="https://nodegear.io" target="_blank" style="margin-top: 10px;") Get Started!
 
 	.partners(style="margin-top: 40px;")
 		.container
 			.row
 				h1.text-center Want to Know More?
 				p.text-center.lead.text-muted Write to us: 
-					a(href="mailto:hello@nodegear.com") hello@nodegear.com
+					a.ng-mailto(href="mailto:hello@nodegear.com") hello@nodegear.com
 			.row
 				.col-sm-12(style="margin-top: 30px; margin-bottom: 10px;")
 					p.text-center.text-muted &copy; 2014 NodeGear LTD

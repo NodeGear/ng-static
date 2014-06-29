@@ -6,6 +6,19 @@ block head
 	title NodeGear Pricing - Node.js Application Hosting
 	meta(name="description" content="Simple Node.js Application Hosting for web developers with NodeGear.")
 
+block mixpanel
+	script.
+		var links = [
+				{
+					id: '.ng-mailto',
+					name: 'Mailto Link',
+					page: 'pricing'
+				}
+			];
+			for (var i = 0; i < links.length; i++) {
+				mixpanel.track_links(links[i].id, 'Clicked Button Link', links[i]);
+			}
+
 block content
 	header.short
 		+navbar(2)
@@ -208,7 +221,7 @@ block content
 
 		.row
 			.col-sm-12.text-center
-				a.btn.btn-primary.btn-lg(href="mailto:hello@nodegear.com") Contact Us
+				a.ng-mailto.btn.btn-primary.btn-lg(href="mailto:hello@nodegear.com") Contact Us
 		.row
 			.col-sm-12(style="margin-top: 30px; margin-bottom: 10px;")
 				p.text-center.text-muted &copy; 2014 NodeGear LTD
