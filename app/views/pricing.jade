@@ -3,7 +3,7 @@ extends layout
 include inc/navbar
 
 block head
-	title NodeGear Pricing - Node.js Application Hosting
+	title Nodegear Pricing - Node.js Application Hosting
 	meta(name="description" content="Simple Node.js Application Hosting for web developers with NodeGear.")
 
 block mixpanel
@@ -68,7 +68,7 @@ block content
 							td Unlimited *
 							td Unlimited *
 				.text-center
-					a.btn.btn-primary.btn Get Started!
+					a.btn.btn-primary.btn(href="https://nodegear.io/register" target="_blank") Get Started!
 					span.text-muted: i &nbsp; No Credit card Required
 			.col-sm-6
 				h1 Database Pricing
@@ -225,3 +225,8 @@ block content
 		.row
 			.col-sm-12(style="margin-top: 30px; margin-bottom: 10px;")
 				p.text-center.text-muted &copy; 2014 NodeGear LTD
+		
+		hr
+
+		footer.row.dark-text
+			include inc/footer

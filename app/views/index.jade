@@ -105,20 +105,21 @@ block content
 			.col-sm-12
 				h1.text-center How it works
 					br
-					small There are two simple ways to deploy your app to nodegear
+					small Its simple. Use a template or custom app.
 		.row(style="margin-top: 10px;")
 			.col-sm-6
 				h3 Use a Template
 				ol
-					li Give your app a name
-					li Select from Ghost.js, a Demo or a git repository
+					li Name your application
+					li Select from Ghost.js or sample demo
 					li Sit back and watch the creation process. Your app will be ready within 30s.
 			.col-sm-6
-				h3 Push your git repository to NodeGear
+				h3 Deploy a custom node.js app.
 				ol
-					li: code git push git@nodegear.io:alex/coolproject.git master
-					li Your Code is Received and Deployed to our servers
-					li App is started on coolproject.alex.ngapp.io
+					li Enable access to your git repository via a generated private key.
+					li Make sure your app can start with <code>npm start</code>
+					li Add your git repository to nodegear
+					li App is started on https://coolproject-alex.ngapp.io
 		.row(style="margin-top: 15px;")
 			.col-sm-12.text-center
 				a.ng-get-started.btn.btn-success.btn-lg(href="https://nodegear.io/" target="_blank") Get Started!
@@ -137,6 +138,10 @@ block content
 						img(src="/img/mongolab.png")
 				.col-sm-4.text-center
 					a.ng-partner-castawaylabs.castawaylabs.text-center(href="http://www.castawaylabs.com" target="_blank") Castaway Labs
+			
 			.row
 				.col-sm-12(style="margin-top: 30px;")
 					p.text-center.text-muted &copy; 2014 NodeGear LTD
+			
+			footer.row
+				include inc/footer
