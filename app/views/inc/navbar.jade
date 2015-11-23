@@ -4,11 +4,12 @@ mixin navbar(active)
 			nav#indexHeader.navbar
 				.container-fluid
 					.navbar-header
-						a.navbar-brand(href="/") NodeGear
+						a.navbar-brand(href="/") Nodegear
 					ul.nav.navbar-nav.navbar-right
 						li(class= active == 1 ? "active" : null): a(href="/") Overview
 						li(class= active == 2 ? "active" : null): a(href="/pricing.html") Pricing
 						li(class= active == 3 ? "active" : null): a(href="/features.html") Features
+						li: a(href="https://nodegear-blog.ngapp.io" target="_blank") Blog
 						li.navbar-spacer: &nbsp;
 						li: a(href="https://nodegear.io/") Log in
 						li: a(href="https://nodegear.io/register" target="_blank") Sign up

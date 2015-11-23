@@ -3,7 +3,7 @@ extends layout
 include inc/navbar
 
 block head
-	title NodeGear Features - Node.js Application Hosting
+	title Nodegear Features - Node.js Application Hosting
 	meta(name="description" content="Simple Node.js Application Hosting for web developers with NodeGear.")
 
 mixin feature (heading, text)
@@ -34,8 +34,8 @@ block content
 	.container.features
 		.row
 			+feature("Cool Dashboard", "We have a modern dashboard using the latest technologies: Angular.js, Require.js, Node.js and Websockets.")
-			+feature("Resource Monitoring", "See your app CPU and RAM usage in real time.")
-			+feature("Traffic Monitoring", "Watch your application traffic in real time.")
+			+feature("Resource Monitoring", "See how your app responds to requests, in real time.")
+			+feature("Traffic Monitoring", "Watch traffic get to your application in real time.")
 		.row
 			+feature("Git Push to Deploy", "Integrates with CIs and is super-easy to use. Just push your project to our repository, and we'll update and restart all your app's processes.")
 			+feature("Inexpensive", "It costs $2 per process per month. You can host all your development projects with ease while not impacting your wallet.")
@@ -43,14 +43,16 @@ block content
 		.row
 			+feature("Multiple Datacentres", "We have datacentres in Europe and Canada. You can choose where your app is hosted. Just select the appropriate server.")
 			+feature("Fast", "Deploy and your application in under 30 seconds (depends on the number of dependencies your application requires).")
-			+feature("Scalable", "You can start multiple processes in multiple datacentres. Your DNS can then route your users based on latency or round-robin style. We do the same on our load balancers to make sure all processes get equivalent number of users.")
+			+feature("Scalable", "You can start multiple processes in multiple datacentres. Your DNS can then route your users based on latency or round-robin style.")
 		.row
-			+feature("SSL Wildcard", "Free wildcard SSL on ngapp.io subdomains.")
+			+feature("SSL Wildcard", "Free wildcard SSL on ngapp.io subdomains. Free custom SSL termination to your applications. Upload any certificate + CA chain and boost your Google rankings")
 			+feature("Technical Support", "We're here to help with any technical queries. We also do node.js consultation for companies. Contact us for more.")
 			+feature("Secure", "With Two Factor Authentication and HTTPS-only Dashboard, you need not fear any three-letter agency spying on your activities.")
 		.row
 			.col-sm-12.text-center
-				a.ng-get-started.btn.btn-primary(href="https://nodegear.io" target="_blank" style="margin-top: 10px;") Get Started!
+				a.ng-get-started.btn.btn-primary.btn-lg(href="https://nodegear.io" target="_blank" style="margin-top: 10px;") Get Started!
+				br
+				small.text-muted.text-center Try it obligation-free
 
 	.partners(style="margin-top: 40px;")
 		.container
@@ -61,3 +63,6 @@ block content
 			.row
 				.col-sm-12(style="margin-top: 30px; margin-bottom: 10px;")
 					p.text-center.text-muted &copy; 2014 NodeGear LTD
+
+			footer.row
+				include inc/footer
